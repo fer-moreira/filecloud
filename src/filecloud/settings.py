@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # APPS
     'src.apps.api',
     'src.apps.frontend',
+    'src.apps.filestorage'
 
 ]
 
@@ -131,6 +132,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = '/media/'
+
+# /src/database/useres/hash.db
+USER_DB_PATH = "%s%s" %(BASE_DIR, "/database/useres")
+
+# AUTH_USER_MODEL = "src.apps.filestorage.models"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

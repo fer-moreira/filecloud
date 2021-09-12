@@ -24,6 +24,9 @@ createuser:
 run:
 	@$(PYTHON) manage.py runserver $(SETTINGSFILE)
 
+shell:
+	@$(PYTHON) manage.py shell $(SETTINGSFILE)
+
 
 help:
 	@echo "make venv       -> para criar a maquina virtual"

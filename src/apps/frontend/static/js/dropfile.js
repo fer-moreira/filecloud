@@ -11,7 +11,6 @@ function dropHandler(ev) {
     // Impedir o comportamento padrão (impedir que o arquivo seja aberto)
     ev.preventDefault();
 
-    
 
     try {
         if (ev.dataTransfer.items) {

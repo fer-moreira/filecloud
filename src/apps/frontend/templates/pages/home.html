@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+{% comment %} <img src="{% get_icon "text/x-python" %}" alt=""> {% endcomment %}
+
+<div id="drop_zone" 
+    class="" 
+    ondrop="dropHandler(event);" 
+    ondragover="dragOverHandler(event);"
+    ondragleave="dragLeaveHandler(event);"
+>
+    <p>Drag one or more files to this Drop Zone...</p>
+</div>
+{% endblock content %}

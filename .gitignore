@@ -8,6 +8,11 @@ venv
 ./venv
 ./venv/
 
+/media
+./media
+media/
+media/*
+media
 
 # C extensions
 *.so

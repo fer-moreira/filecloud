@@ -12,13 +12,11 @@
     <title>Uploader</title>
 </head>
 <body>
-    <div id="drop_zone" 
-        class="" 
-        ondrop="dropHandler(event);" 
-        ondragover="dragOverHandler(event);"
-        ondragleave="dragLeaveHandler(event);"
-    >
-        <p>Drag one or more files to this Drop Zone...</p>
-    </div>
+    {% include "includes/header.html" %}
+    
+    {{ matheuszin }}
+
+    {% block content %}
+    {% endblock content %}
 </body>
 </html>
