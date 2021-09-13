@@ -4,7 +4,8 @@ DJANGO-ADMIN:=venv/bin/django-admin
 SETTINGSFILE:=--settings=src.settings.local
 
 define create-env
-virtualenv venv
+python3 -m pip install virtualenv
+python3 -m virtualenv venv
 endef
 
 venv:
