@@ -30,4 +30,3 @@ class ContentTypeModels (models.Model):
     class Meta:
         verbose_name = 'ContentType Icon'
         verbose_name_plural = 'ContentType Icons'
-

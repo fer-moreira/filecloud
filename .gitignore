@@ -14,6 +14,10 @@ media/
 media/*
 media
 
+*.db
+
+static/CACHE
+
 # C extensions
 *.so
 

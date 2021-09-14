@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" />
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    {% if request.user.is_authenticated %}
+    <script src="{% static 'js/uploader.js' %}"></script>
+    <script src="{% static 'js/dropfile.js' %}"></script>
+    {% endif %}
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    <title>Uploader</title>
+</head>
+<body>
+    <div class="user_panel">
+        {% if request.user.is_authenticated %}
+            <p>{{ request.user }}</p>
+        {% endif %}
+    </div>
+    {% if request.user.is_authenticated %}
+
+    <div id="drop_zone" class="dropzone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);"ondragleave="dragLeaveHandler(event);">
+        <div id="uploadingList" class="dropzone__list">
+        </div>
+    </div>
+    {% else %}
+    <a href="/admin/login/?next=/frontend/">Login</a>
+    {% endif %}
+
+</body>
+</html>

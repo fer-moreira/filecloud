@@ -48,7 +48,6 @@ INSTALLED_APPS = [
 
     # APPS
     'src.apps.api',
-    'src.apps.frontend',
     'src.apps.filestorage'
 
 ]
@@ -135,8 +134,8 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = '/media/'
 
-# /src/database/useres/hash.db
-USER_DB_PATH = "%s%s" %(BASE_DIR, "/database/useres")
+FILE_SYSTEM_DIR = ".%sfiler/blob" %MEDIA_ROOT
+
 
 # AUTH_USER_MODEL = "src.apps.filestorage.models"
 
