@@ -15,6 +15,8 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-(z@!$l43hve_n=-f5sozbyzhkrt$g*g0)oso8@qxxy^md2&ip&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["*", "192.168.1.68"]
 
 
 # Application definition
@@ -33,7 +35,6 @@ ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS = [
     # EXTENSIONS
     'corsheaders',
-    'jazzmin',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -45,10 +46,11 @@ INSTALLED_APPS = [
     # MODULES   
     'rest_framework',
     'rest_framework.authtoken',
+    'sass_processor',
 
     # APPS
     'src.apps.api',
-    'src.apps.filestorage'
+    'src.apps.frontend'
 
 ]
 
@@ -61,6 +63,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+AUTHENTICATION_BACKENDS = ['src.filecloud.middleware.EmailBackend']
 
 ROOT_URLCONF = 'src.filecloud.urls'
 
@@ -79,6 +83,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'src.filecloud.wsgi.application'
 
@@ -130,12 +135,25 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'sass_processor.finders.CssFinder'
+]   
+
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
 
-MEDIA_ROOT = '/media/'
+MEDIA_URL = "/media/"
+MEDIA_ROOT = 'media'
 
-FILE_SYSTEM_DIR = ".%sfiler/blob" %MEDIA_ROOT
+FILE_SYSTEM_DIR = "%s/filer/root" %MEDIA_ROOT
+FINAL_FILES_PATH = (ROOT_DIR / FILE_SYSTEM_DIR)
 
+HOME_FILES_PATH = FINAL_FILES_PATH
+
+MIMETYPES_FOLDER = BASE_DIR / "public/mimetypes"
 
 # AUTH_USER_MODEL = "src.apps.filestorage.models"
 
@@ -143,3 +161,14 @@ FILE_SYSTEM_DIR = ".%sfiler/blob" %MEDIA_ROOT
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+ERRORS_MAP = {
+    101 : "Invalid email and/or password. Please try again.",
+    202 : "The email you entered is not connected to an account.",
+    303 : "Something is wrong with your form, check it out. ",
+    304 : "Passwords do not match, please check.",
+    305 : "Internal server Error, please try again later. ",
+    306 : "This email address is already in use. ",
+}
+ 
+ENCRYPT_PATH_PASSPHRASE = "9a0e9cec16720f41c5df6370013312d0"

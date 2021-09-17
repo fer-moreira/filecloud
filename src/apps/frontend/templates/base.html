@@ -1,0 +1,36 @@
+{% load static %}
+{% load sass_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="{% static 'public/favicon.ico' %}" />
+
+    <script src="{% static 'js/tools/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/dropmenuHandler.js' %}"></script>
+    
+    {% if request.user.is_authenticated %}
+    <script src="{% static 'js/dropfile.js' %}"></script>
+    {% endif %}
+    {% block head %}
+    {% endblock head %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+
+    <link href="{% sass_src 'scss/base.scss' %}" rel="stylesheet" type="text/css" />
+
+    <title>Filecloud - Home</title>
+</head>
+<body>
+    <div class="main">
+        {% block content %}
+        {% endblock content %}
+    </div>
+</body>
+</html>

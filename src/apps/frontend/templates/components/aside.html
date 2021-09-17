@@ -1,0 +1,29 @@
+<aside class="navigation">
+    <div class="navigation__shortcut">
+        <div class="navigation-logo">
+            {% include "svgs/bi_cloud.svg" %}
+            <span class="navigation-logo__title">File Cloud.</span>
+        </div>
+        <div class="upload-shortcut">
+            <button class="upload-shortcut--submit">+ Upload New</button>
+        </div>
+    </div>
+    <div class="navigation__locations">
+        <a class="location in-location" href="/">
+            {% include "svgs/aside/cloud_active.svg" %}
+            <span class="location__name">Cloud</span>
+        </a>
+        <a class="location" href="#">  
+            {% include "svgs/aside/db_idle.svg" %}
+            <span class="location__name">Data</span>
+        </a>
+        <a class="location" href="#">  
+            {% include "svgs/aside/temp_idle.svg" %}
+            <span class="location__name">History</span>
+        </a>
+        <a class="location" href="#">  
+            {% include "svgs/aside/trash_idle.svg" %}
+            <span class="location__name">Trash</span>
+        </a>
+    </div>
+</aside>

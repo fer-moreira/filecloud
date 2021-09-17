@@ -1,0 +1,44 @@
+<nav class="navheader">
+    {% if request.user.is_authenticated %}
+    <div class="navheader__breadcrumb">
+        <div class="nav-greetings">
+            <span class="nav-greetings--text">Olá <b>{{ request.user.first_name }}</b>,</span>
+        </div>
+        <div class="nav-breadcrumb">
+            <span class="nav-breadcrumb--text">Cloud</span>
+            <span class="nav-breadcrumb--text current">/</span>
+            <span class="nav-breadcrumb--text current">Dados Diferenciados</span>
+        </div>
+    </div>
+    <div class="navheader__profile">
+        <button class="function-btn">
+            {% include "svgs/header/add_folder.svg" %}
+        </button>
+        
+        <button class="function-btn">
+            {% include "svgs/header/search.svg" %}
+        </button>
+        
+        <button class="function-btn">
+            {% include "svgs/header/settings.svg" %}
+        </button>
+        
+        <button class="function-btn profile-container" id="profile-container">
+            <div class="profile-img" style="background-image: url('https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=60&q=80');"></div>
+            <div class="profile-dropmenu" id="profile-dropmenu">
+                <div class="menu">
+                    <div class="menu--arrow"></div>
+                    {% if request.user.is_superuser %}
+                    <a class="menu--btn danger" href="/admin">Admin</a>
+                    <div class="menu--separator"></div>
+                    {% endif %}
+                    <a class="menu--btn" href="/my-account">My Account</a>
+                    <a class="menu--btn" href="/settings">Settings</a>
+                    <div class="menu--separator"></div>
+                    <a class="menu--btn danger" href="/logout">Log Out</a>
+                </div>
+            </div>
+        </button>
+    </div>
+    {% endif %}
+</nav>

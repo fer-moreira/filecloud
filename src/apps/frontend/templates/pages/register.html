@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<script src="{% static 'js/helpers/formErrors.js' %}"></script>
+<script src="{% static 'js/helpers/registerForm.js' %}"></script>
+{% endblock head %}
+
+{% block content %}
+<div class="sign-block">
+    <form id="register-form" class="sign-form" action="/api/v1/register" method="POST">
+        {% csrf_token %}
+        <div class="sign-title-container">
+            <h1 class="sign-title" >Create your Filecloud account</h1>
+        </div>
+        <div class="sign-error {% if hasError %}showing{% endif %}" id="error-handler-sign">
+            <div class="sign-error-close" id="close-error">x</div>
+            <p class="error-text">{{ errorDescription }}</p>
+        </div>
+        <div class="sign-horizontal">
+            <input type="text" name="firstname" id="firstname" class="sign-field" placeholder="First Name">
+            <input type="text" name="secondname" id="secondname" class="sign-field" placeholder="Second Name">
+        </div>
+        <input type="email" name="email" id="email" class="sign-field" placeholder="Email">
+        <input type="password" name="password" id="password" class="sign-field" placeholder="Password">
+        <input type="password" name="password2" id="password2" class="sign-field" placeholder="Retype Password">
+        <div class="sign-final flex-column">
+            <label class="sign-checkbox register">
+                <input type="checkbox" name="check_before_1" id="check_before_1" class="sign-checkbox-input">
+                <span class="sign-checkmark"></span>
+                I understand that if I lose my password, I may lose my data.
+            </label>
+            <label class="sign-checkbox register">
+                <input type="checkbox" name="check_before_2" id="check_before_2" class="sign-checkbox-input">
+                <span class="sign-checkmark"></span>
+                I have read and understand <a href="/guidelines">Filecloud’s guidelines.</a>
+            </label>
+            <div class="sign-submit">
+                <button id="submit-btn" class="submit-button fullwt" type="submit" value="Submit" disabled>Create My Account</button>
+            </div>
+        </div>
+        
+        <div class="sign-pseudo-link centered"><a class="sign-gotolink" href="/login">Already have an account ? Login</a></div>
+    </form>
+</div>
+{% endblock content %}
+

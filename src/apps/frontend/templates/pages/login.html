@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load utils_tag %}
+
+{% block head %}
+<script src="{% static 'js/helpers/formErrors.js' %}"></script>
+{% endblock head %}
+
+{% block content %}
+<div class="sign-block">
+    <form class="sign-form" action="/api/v1/login" method="POST">
+        {% csrf_token %}
+        <div class="sign-title-container">
+            <h1 class="sign-title" >Login</h1>
+        </div>
+        <input type="email" name="email" id="email" class="sign-field" placeholder="Email">
+        <input type="password" name="password" id="password" class="sign-field" placeholder="Password">
+        <div class="sign-pseudo-link"><a class="sign-gotolink" href="{% reverse "front_forgot" %}">Forgot your password?</a></div>
+        <div class="sign-final">
+            <label class="sign-checkbox">
+                <input type="checkbox" name="remember_me" id="remember-me" class="sign-checkbox-input">
+                <span class="sign-checkmark"></span>
+                Remember Me
+            </label>
+            <div class="sign-submit">
+                <button class="submit-button" type="submit" value="Submit">Log In</button>
+            </div>
+        </div>
+        <div class="sign-pseudo-link centered"><a class="sign-gotolink" href="{% reverse "front_register" %}">Don’t have an account? Create one now</a></div>
+        <div class="sign-error {% if hasError %}showing{% endif %}" id="error-handler-sign">
+            <div class="sign-error-close" id="close-error">x</div>
+            <p class="error-text">{{ errorDescription }}</p>
+        </div>
+    </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,15 @@
+.main-block {
+    min-height: 100vh;
+    width: 100%;
+    background-color: $dark;
+
+    display: grid;
+    grid-template-columns: 300px auto;
+
+    max-width: 1600px;
+    margin:  0 auto;
+
+    .content-container {
+        
+    }
+}

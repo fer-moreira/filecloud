@@ -1,32 +1,30 @@
-from os import name
 from django.db import models
-from django.utils.safestring import mark_safe
+from django.contrib.auth.models import User
+from django.conf import settings
+from django.utils.text import slugify
 
-# Create your models here.
-class ContentTypeModels (models.Model):
-    id          = models.AutoField      (primary_key=True)
-    name        = models.CharField      (max_length=10, verbose_name="SVG File Name")
-    contenttype = models.CharField      (max_length=50, verbose_name="Content Type")
-    svgfile     = models.FileField      (verbose_name="SVG File Icon", upload_to='contentypes/' )
-    created_at  = models.DateTimeField  (auto_now_add=True, verbose_name='Created at')
-    updated_at  = models.DateTimeField  (auto_now=True, verbose_name='Updated at')
+class FilePathModel (models.Model):
+    id              = models.AutoField      (primary_key=True)
+    name            = models.CharField      (max_length=100, verbose_name="Filename")
+    file            = models.FilePathField  (verbose_name="File Data")
+    path_encoded    = models.CharField      (max_length=500, verbose_name="Encoded path")
+    contenttype     = models.CharField      (max_length=100, verbose_name="Content Type")
+    filesize        = models.IntegerField   (verbose_name="File Size")
+    owner           = models.ForeignKey     (User, on_delete=models.CASCADE)
+    created_at      = models.DateTimeField  (auto_now_add=True, verbose_name='Created at')
+    updated_at      = models.DateTimeField  (auto_now=True,  verbose_name='Updated at')
 
-    def svg_file_path (self):
-        return self.svgfile.path
+    @property
+    def slug_mtype (self):
+        return slugify(self.contenttype.replace("/","-"))
 
-    def svg_file_url (self):
-        return self.svgfile.url
-
-    def svgcontent (self):
-        _file = self.svgfile.open("r")
-        _content = _file.readline()
-        _file.close()
-
-        return mark_safe(str(_content))
+    @property
+    def file_path (self):
+        return self.file.path
 
     def __str__(self):
         return self.name
 
     class Meta:
-        verbose_name = 'ContentType Icon'
-        verbose_name_plural = 'ContentType Icons'
+        verbose_name = 'File'
+        verbose_name_plural = 'Files'

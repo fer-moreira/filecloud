@@ -1,0 +1,527 @@
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal; }
+
+ul {
+  list-style: none; }
+
+button,
+input,
+select {
+  margin: 0; }
+
+html {
+  box-sizing: border-box; }
+
+*, *::before, *::after {
+  box-sizing: inherit; }
+
+img,
+video {
+  height: auto;
+  max-width: 100%; }
+
+iframe {
+  border: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td,
+th {
+  padding: 0; }
+
+* {
+  font-family: 'PT Sans', sans-serif; }
+
+.main {
+  height: 100vh;
+  width: 100%;
+  background-color: #0E0E11; }
+
+a {
+  font-weight: bolder;
+  color: #0E0E11;
+  font-size: 13px;
+  text-decoration: underline; }
+
+.navigation {
+  display: grid;
+  grid-template-rows: 250px auto;
+  border-style: solid;
+  border-width: 0px 2px 0px 0px;
+  border-color: #1d1d22; }
+  .navigation__shortcut {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; }
+    .navigation__shortcut .navigation-logo {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center; }
+      .navigation__shortcut .navigation-logo svg {
+        height: 40px;
+        width: 40px; }
+      .navigation__shortcut .navigation-logo__title {
+        margin-left: 15px;
+        font-size: 25px;
+        font-weight: bold;
+        color: #F3F3F3; }
+    .navigation__shortcut .upload-shortcut {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 40px; }
+      .navigation__shortcut .upload-shortcut--submit {
+        outline: none;
+        text-decoration: none;
+        border: none;
+        border-radius: 21px;
+        width: 90%;
+        height: 60px;
+        font-weight: bold;
+        font-size: 15px;
+        background-color: #F3F3F3;
+        color: #0E0E11;
+        transition: 200ms background-color, 200ms color; }
+        .navigation__shortcut .upload-shortcut--submit:hover {
+          background-color: #BBBBBB;
+          border: 2px solid #A6A6A6; }
+        .navigation__shortcut .upload-shortcut--submit:active {
+          background-color: #0E0E11;
+          color: #F3F3F3;
+          border: 2px solid #F3F3F3; }
+  .navigation__locations {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; }
+    .navigation__locations .location {
+      height: 70px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0px 0px 0px 60px;
+      background-color: #0E0E11;
+      border-style: solid;
+      border-width: 0px 0px 0px 0px;
+      border-color: #F3F3F3;
+      transition: 50ms border, 50ms background, 50ms color; }
+      .navigation__locations .location svg {
+        height: 24px;
+        width: 24px; }
+      .navigation__locations .location__name {
+        font-weight: normal;
+        font-size: 17px;
+        color: #BBBBBB;
+        margin-left: 20px; }
+      .navigation__locations .location:hover {
+        padding: 0px 0px 0px 55px;
+        border-style: solid;
+        border-width: 0px 0px 0px 5px;
+        border-color: #F3F3F3;
+        background-color: #18181D; }
+        .navigation__locations .location:hover__name {
+          color: #F3F3F3; }
+      .navigation__locations .location.in-location {
+        padding: 0px 0px 0px 55px;
+        border-style: solid;
+        border-width: 0px 0px 0px 5px;
+        border-color: #F3F3F3;
+        background-color: #18181D; }
+        .navigation__locations .location.in-location .location__name {
+          color: #F3F3F3; }
+
+.navheader {
+  height: 120px;
+  border-style: solid;
+  border-width: 0px 0px 2px 0px;
+  border-color: #1d1d22;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  .navheader__breadcrumb {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0px 0px 0px 30px; }
+    .navheader__breadcrumb .nav-greetings--text {
+      color: #BBBBBB;
+      font-size: 28px;
+      font-weight: lighter; }
+      .navheader__breadcrumb .nav-greetings--text b {
+        color: #F3F3F3;
+        font-weight: bold; }
+    .navheader__breadcrumb .nav-breadcrumb {
+      display: flex;
+      flex-direction: row; }
+      .navheader__breadcrumb .nav-breadcrumb--text {
+        color: #F3F3F3;
+        font-size: 16px;
+        margin-right: 8px; }
+        .navheader__breadcrumb .nav-breadcrumb--text.current {
+          font-weight: bolder; }
+  .navheader__profile {
+    padding-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; }
+    .navheader__profile .function-btn {
+      background-color: transparent;
+      border: none;
+      cursor: pointer; }
+      .navheader__profile .function-btn svg {
+        height: 28px;
+        width: 28px; }
+      .navheader__profile .function-btn:hover {
+        filter: brightness(0.7); }
+      .navheader__profile .function-btn .profile-img {
+        height: 60px;
+        width: 60px;
+        background-size: contain;
+        background-position: center;
+        border-radius: 15px; }
+        .navheader__profile .function-btn .profile-img:hover {
+          filter: brightness(0.7); }
+
+.profile-container {
+  position: relative;
+  filter: none !important; }
+  .profile-container .profile-dropmenu {
+    display: none;
+    position: relative;
+    height: fit-content;
+    width: 150px;
+    background-color: #F3F3F3;
+    border-radius: 2px;
+    position: absolute;
+    transform: translate(-100px, 20px);
+    padding: 15px 0px; }
+    .profile-container .profile-dropmenu.showing-menu {
+      display: block; }
+    .profile-container .profile-dropmenu .menu {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px; }
+      .profile-container .profile-dropmenu .menu--btn {
+        color: #18181D;
+        text-decoration: none;
+        font-weight: bolder; }
+        .profile-container .profile-dropmenu .menu--btn:hover {
+          color: #0E0E11;
+          text-decoration: underline; }
+        .profile-container .profile-dropmenu .menu--btn.danger {
+          color: #b32b2b;
+          font-weight: bolder; }
+          .profile-container .profile-dropmenu .menu--btn.danger:hover {
+            color: #ca1111;
+            text-decoration: underline; }
+      .profile-container .profile-dropmenu .menu--separator {
+        width: 80%;
+        background-color: #BBBBBB;
+        height: 2px;
+        border-radius: 10em; }
+      .profile-container .profile-dropmenu .menu--arrow {
+        position: absolute;
+        height: 15px;
+        width: 15px;
+        background-color: #F3F3F3;
+        top: -7.5px;
+        right: 15px;
+        transform: rotate(45deg); }
+
+.storage-container {
+  width: 100%;
+  height: 100%; }
+  .storage-container .storage-field {
+    height: 80px;
+    display: grid;
+    grid-template-columns: 50% 50px 70px 90px 70px 40px;
+    justify-content: space-between;
+    align-items: center;
+    border-style: solid;
+    border-color: #1d1d22;
+    border-width: 0 0 3px 0; }
+    .storage-container .storage-field.field-head {
+      height: 50px; }
+      .storage-container .storage-field.field-head .field-container--text {
+        font-weight: bolder; }
+    .storage-container .storage-field.field-file .field-container--text {
+      font-weight: normal; }
+    .storage-container .storage-field .field-container {
+      min-width: 40px;
+      height: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center; }
+      .storage-container .storage-field .field-container svg {
+        height: 32px;
+        width: 32px;
+        margin-right: 10px; }
+      .storage-container .storage-field .field-container:first-child {
+        width: 50%;
+        padding-left: 30px; }
+      .storage-container .storage-field .field-container--text {
+        color: #F3F3F3; }
+
+.main-block {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0E0E11;
+  display: grid;
+  grid-template-columns: 300px auto;
+  max-width: 1600px;
+  margin: 0 auto; }
+
+.sign-block {
+  width: 100%;
+  height: 100%;
+  background-color: #0E0E11;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .sign-block .sign-form {
+    width: 350px;
+    height: fit-content;
+    background-color: #F3F3F3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 30px 20px 30px;
+    gap: 10px;
+    border-radius: 14px;
+    animation-name: show_ease;
+    animation-duration: 1s; }
+    .sign-block .sign-form .sign-horizontal {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px; }
+    .sign-block .sign-form .sign-title-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 50px; }
+      .sign-block .sign-form .sign-title-container .sign-title {
+        font-size: 20px;
+        font-weight: normal;
+        letter-spacing: 4px;
+        text-align: center;
+        padding: 15px 0px 25px 0px; }
+    .sign-block .sign-form .sign-field {
+      height: 40px;
+      width: 100%;
+      background-color: #BBBBBB;
+      color: #0E0E11;
+      border: none;
+      border-radius: 10px;
+      padding: 0px 16px 0px 16px;
+      outline: none;
+      font-weight: normal;
+      font-size: 13px;
+      outline-style: solid;
+      outline-color: #e74545;
+      outline-width: 0px;
+      transition: 200ms background-color, 200ms color, 50ms outline; }
+      .sign-block .sign-form .sign-field.not-equal-pass {
+        outline-width: 3px;
+        outline-style: solid;
+        outline-color: #e74545; }
+      .sign-block .sign-form .sign-field:hover {
+        background-color: #BBBBBB;
+        color: #0E0E11; }
+        .sign-block .sign-form .sign-field:hover::placeholder {
+          color: #0E0E11; }
+      .sign-block .sign-form .sign-field:focus {
+        background-color: #BBBBBB;
+        color: #0E0E11; }
+        .sign-block .sign-form .sign-field:focus::placeholder {
+          color: #BBBBBB; }
+      .sign-block .sign-form .sign-field:not(:placeholder-shown) {
+        background-color: #BBBBBB;
+        color: #0E0E11; }
+        .sign-block .sign-form .sign-field:not(:placeholder-shown)::placeholder {
+          color: #0E0E11; }
+      .sign-block .sign-form .sign-field::placeholder {
+        color: #0E0E11;
+        font-weight: 500; }
+    .sign-block .sign-form .sign-pseudo-link {
+      width: 100%;
+      padding: 0px 6px; }
+      .sign-block .sign-form .sign-pseudo-link.centered {
+        margin-top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+      .sign-block .sign-form .sign-pseudo-link .sign-gotolink {
+        color: #0E0E11;
+        font-size: 13px;
+        font-weight: lighter;
+        text-decoration: underline; }
+    .sign-block .sign-form .sign-final {
+      padding: 0px 6px;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 5px; }
+      .sign-block .sign-form .sign-final .sign-checkbox {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        padding-left: 28px;
+        font-size: 14px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        height: 20px; }
+        .sign-block .sign-form .sign-final .sign-checkbox .sign-checkbox-input {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+          height: 0;
+          width: 0; }
+        .sign-block .sign-form .sign-final .sign-checkbox .sign-checkmark {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 20px;
+          width: 20px;
+          background-color: #BBBBBB;
+          border-radius: 5px;
+          border-style: solid;
+          border-width: 3px;
+          border-color: #A6A6A6; }
+      .sign-block .sign-form .sign-final .sign-checkbox.register {
+        height: 45px; }
+      .sign-block .sign-form .sign-final .sign-submit .submit-button {
+        width: 120px;
+        height: 50px;
+        background-color: #18181D;
+        color: #F3F3F3;
+        font-weight: bold;
+        font-size: 15px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: 200ms color, 200ms background-color; }
+        .sign-block .sign-form .sign-final .sign-submit .submit-button.fullwt {
+          width: 100%;
+          margin-top: 20px; }
+        .sign-block .sign-form .sign-final .sign-submit .submit-button:hover {
+          background-color: #0E0E11; }
+        .sign-block .sign-form .sign-final .sign-submit .submit-button:disabled {
+          background-color: #F3F3F3;
+          color: #A6A6A6;
+          border: 2px solid #BBBBBB; }
+      .sign-block .sign-form .sign-final.flex-column {
+        flex-direction: column;
+        justify-content: unset;
+        align-items: unset;
+        height: fit-content; }
+    .sign-block .sign-form .sign-error {
+      background: #b32b2b;
+      padding: 0px 15px;
+      margin-top: 10px;
+      border-radius: 5px;
+      height: 0px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 300ms height;
+      width: 100%;
+      position: relative; }
+      .sign-block .sign-form .sign-error.showing {
+        height: 56px; }
+      .sign-block .sign-form .sign-error-close {
+        font-size: 18px;
+        color: white;
+        font-weight: bolder;
+        position: absolute;
+        top: 0;
+        right: 10px; }
+        .sign-block .sign-form .sign-error-close:hover {
+          cursor: pointer;
+          color: #bdbdbd; }
+      .sign-block .sign-form .sign-error .error-text {
+        font-weight: bolder;
+        font-size: 15px;
+        color: #F3F3F3; }
+
+.sign-checkbox:hover .sign-checkbox-input ~ .sign-checkmark {
+  background-color: #A6A6A6 !important; }
+
+/* When the checkbox is checked, add a blue background */
+.sign-checkbox .sign-checkbox-input:checked ~ .sign-checkmark {
+  background-image: url("/static/public/checkmark.png") !important;
+  background-size: cover;
+  background-position: center; }
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.sign-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none; }
+
+/* Show the checkmark when checked */
+.sign-checkbox .sign-checkbox-input:checked ~ .sign-checkmark:after {
+  display: block; }
+
+@keyframes show_ease {
+  0% {
+    opacity: 0.0;
+    filter: blur(4px); }
+  50% {
+    filter: blur(0px); }
+  100% {
+    opacity: 1.0; } }
+
+/*# sourceMappingURL=base.css.map */

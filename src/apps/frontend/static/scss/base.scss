@@ -1,0 +1,25 @@
+@import "./_includes/_colors.scss";
+@import "./_includes/_reset.scss";
+
+
+
+.main {
+    height: 100vh;
+    width: 100%;
+    background-color: $dark;
+}
+
+a {
+    font-weight: bolder;
+    color: $dark;
+    font-size: 13px;
+    text-decoration: underline;
+}
+
+@import "./_components/aside.scss";
+@import "./_components/header.scss";
+@import "./_components/storage.scss";
+
+@import "./pages/home.scss";
+@import "./pages/login_signin.scss";
+

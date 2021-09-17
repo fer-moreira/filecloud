@@ -1,0 +1,159 @@
+.navheader {
+    height: 120px;
+
+    border-style: solid;
+    border-width: 0px 0px 2px 0px;
+    border-color: $invisible_border;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    &__breadcrumb {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 0px 0px 0px 30px;
+
+        .nav-greetings {
+            
+            &--text {
+                color: $grey;
+                font-size: 28px;
+                font-weight: lighter;
+
+                b {
+                    color: $white;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .nav-breadcrumb {
+            display: flex;
+            flex-direction: row;
+
+            &--text {
+                color: $white;
+                font-size: 16px;
+                margin-right: 8px;
+
+                &.current {
+                    font-weight: bolder;
+                }
+            }
+        }
+    }
+
+    &__profile {
+        padding-right: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        .function-btn {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+
+            &:last-child {
+                // margin-left: 5px;
+            }
+
+            svg {
+                height: 28px;
+                width: 28px;
+            }
+            
+            &:hover {
+                filter: brightness(0.7);
+            }
+
+            .profile-img {
+                height: 60px;
+                width: 60px;
+                background-size: contain;
+                background-position: center;
+                border-radius: 15px;
+
+                &:hover {
+                    filter: brightness(0.7);
+                }
+            }
+        }
+    }
+}
+
+
+.profile-container {
+    position: relative;
+    filter: none !important;
+
+    .profile-dropmenu {
+        display: none;
+
+        position: relative;
+        height: fit-content;
+        width: 150px;
+        background-color: $white;
+        border-radius: 2px;
+        position: absolute;
+        transform: translate(-100px, 20px);
+
+        padding: 15px 0px;
+
+        &.showing-menu {
+            display: block;
+        }
+        
+        .menu {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            &--btn {
+                color: $deepgrey;
+                text-decoration: none;
+                font-weight: bolder;
+
+                &:hover {
+                    color: $dark;
+                    text-decoration: underline;
+                }
+
+                &.danger {
+                    color: $red;
+                    font-weight: bolder;
+                    
+                    &:hover {
+                        color: $alert;
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            &--separator {
+                width: 80%;
+                background-color: $grey;
+                height: 2px;
+                border-radius: 10em;
+            }
+
+            &--arrow {
+                position: absolute;
+                height: 15px;
+                width: 15px;
+                background-color: $white;
+                top: -7.5px;
+                right: 15px;
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
