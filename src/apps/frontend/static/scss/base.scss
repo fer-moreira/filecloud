@@ -4,7 +4,7 @@
 
 
 .main {
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background-color: $dark;
 }
@@ -19,6 +19,7 @@ a {
 @import "./_components/aside.scss";
 @import "./_components/header.scss";
 @import "./_components/storage.scss";
+@import "./_components/uploading_list.scss";
 
 @import "./pages/home.scss";
 @import "./pages/login_signin.scss";

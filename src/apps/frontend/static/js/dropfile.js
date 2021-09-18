@@ -1,10 +1,15 @@
+var ItemsUploading = {};
+
+
 function dragOverHandler(ev) {
-    document.querySelector("#drop_zone").className = "dropzone hovering";
+    document.querySelector("#dropzone-indicator").className = "dropzone-filter showing-filter";
     ev.preventDefault();
 }
 
 function dropHandler(ev) {
     ev.preventDefault();
+
+    $("#uploadingList").attr("class","uploading-list showing");
 
     try {
         var datatTransferFiles = ev.dataTransfer.items;
@@ -12,6 +17,8 @@ function dropHandler(ev) {
 
         if (ev.dataTransfer.files) {
             for (var i = 0; i < ev.dataTransfer.items.length; i++) {
+                console.log(i);
+
                 if (datatTransferFiles[i].kind === 'file') {
                     var file = datatTransferFiles[i].getAsFile();
                     FileUploader(file, i);
@@ -25,31 +32,49 @@ function dropHandler(ev) {
         }
     }
     catch (e) {
-        document.querySelector("#drop_zone").className = "dropzone error";
+        document.querySelector("#dropzone-indicator").className = "dropzone-filter";
         console.error(e);
     }
 
-    document.querySelector("#drop_zone").className = "dropzone";
+    document.querySelector("#dropzone-indicator").className = "dropzone-filter";
 }
 
 function dragLeaveHandler(ev) {
-    document.querySelector("#drop_zone").className = "dropzone";
+    document.querySelector("#dropzone-indicator").className = "dropzone-filter";
 }
 
 
 
 function FileUploader (file, index) {
     var randHash = getRandomHash();
-
-    const fileListBlock = `<div class=\"file-details\"><div class=\"file-progress\"> <span class=\"file-name\"> ${file.name.length > 20 ? (file.name.slice(0, 20) + "...") : file.name} </span><div class=\"progress-bar file_${index}_${randHash}\" id=\"progress-bar\"></div></div></div>`;
+    
+    ItemsUploading[`file_${index}_${randHash}`] = false
+    
+    const fileListBlock = '<div class="upload-item">'+
+    '        <div class="upload-item__detail">'+
+    '            <div class="item-detail">'+
+    `                <div class="item-detail--text" ><img class="rotating" id="image_file_${index}_${randHash}" height="28px" width="28px" src="/static/public/loading.svg" alt=""></div>`+
+    `                <div class="item-detail--text" >${file.name.length > 20 ? (file.name.slice(0, 20) + "...") : file.name}</div>`+
+    '                <div class="item-detail--text" >|</div>'+
+    `                <div class="item-detail--text" >840 kb</div>`+
+    '            </div>'+
+    '            <div class="item-buttons">'+
+    '                <button class="item-buttons--close">x</button>'+
+    '            </div>'+
+    '        </div>'+
+    '        <div class="upload-item__progress-bar">'+
+    `           <div class="progress-bar file_${index}_${randHash}" id="progress-bar"></div>`+
+    '        </div>'+
+    '    </div>';
+	
     $("#uploadingList").append(fileListBlock);
 
-    var formData = new FormData();
-    formData.append("file", file, file.name);
+    setTimeout(() => {
+        var formData = new FormData();
+        formData.append("file", file, file.name);
 
-    console.log(file);
-
-    uploadFormData(formData, index, randHash);
+        uploadFormData(formData, index, randHash);
+    }, 10);
 }
 
 function uploadFormData (fd, fileindex, randHash) {
@@ -91,9 +116,24 @@ function uploadFormData (fd, fileindex, randHash) {
         error:function(e){
             console.error(e.statusText);
             $(`.progress-bar.file_${fileindex}_${randHash}`).width('100%');
+
+            $(`#image_file_${fileindex}_${randHash}`).attr("src","/static/public/error.svg");
+            $(`#image_file_${fileindex}_${randHash}`).attr("class","");
         },
         success: function(resp){
             $(`.progress-bar.file_${fileindex}_${randHash}`).width('100%');
+            $(`#image_file_${fileindex}_${randHash}`).attr("src","/static/public/checkmark.svg");
+            $(`#image_file_${fileindex}_${randHash}`).attr("class","");
+
+            ItemsUploading[`file_${fileindex}_${randHash}`] = true
+
+            setTimeout(() => {
+                var values = $.map(ItemsUploading, function(value, key) { return value });
+                console.log(values);
+                if (values.every(e => e === true)) {
+                    window.location.reload();
+                }
+            }, 300);
         }
     });
     

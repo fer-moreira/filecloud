@@ -1,0 +1,94 @@
+.uploading-list {
+    display: none;
+    position: sticky;
+
+    min-height: 100px;
+    width: 350px;
+    background: $dark;
+    bottom: 30px;
+    margin-left: 30px;
+
+    border-style: solid;
+    border-width: 4px;
+    border-color: $deepgrey;
+    border-radius: 10px;
+
+    filter: drop-shadow(1px 1px 8px $deepgrey);
+    padding: 10px;
+    
+    &.showing {
+        display: block;
+    }
+
+    .upload-item {
+        display: flex;
+        flex-direction: column;
+
+        height: 60px;
+
+        &__detail {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 100%;
+
+            .item-detail {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+                gap: 10px;
+
+                &--text {
+                    color: $white;
+
+                    img {
+                        transform: rotate(0deg);
+                    }
+
+                    .rotating {
+                        animation: rotating 1s infinite;
+                    }
+                }
+            }
+
+            .item-buttons {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                &--close {
+                    font-size: 20px;
+                    font-weight: bolder;
+                    background-color: transparent;
+                    border: none;
+                    color: $white;
+                }
+            }
+        }
+
+        &__progress-bar {
+            background-color: $space;
+            height: 3px;
+            width: 100%;
+
+            .progress-bar {
+                background-color: $progresss;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+
+@keyframes rotating {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,11 +1,11 @@
 .storage-container {
+    min-height: calc(100vh - 120px);
     width: 100%;
-    height: 100%;
 
     .storage-field {
         height: 80px;
         display: grid;
-        grid-template-columns: 50% 50px 70px 90px 70px 40px;
+        grid-template-columns:calc(100% - 500px) 100px 50px 90px 70px 40px;
         justify-content: space-between;
         align-items: center;
 
@@ -24,9 +24,12 @@
         }
         &.field-file {
             .field-container {
+                overflow: hidden;
                 
                 &--text {
+                    word-wrap: anywhere;
                     font-weight: normal;
+                    text-align: center;
                 }
             }
         }
@@ -45,7 +48,6 @@
             }
 
             &:first-child {
-                width: 50%;
                 padding-left: 30px;
             }
 
@@ -53,5 +55,40 @@
                 color: $white;
             }
         }
+    }
+}
+
+.dropzone-filter {
+    background-color: rgba(0, 0, 0, 0);
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    display: none;
+
+    * {
+        pointer-events: none;
+    }
+
+    &__area {
+        background-color: transparent;
+        padding: 30px 70px;
+        border-style: dashed;
+        border-width: 4px;
+        border-color: $white;
+
+        .area-image {
+            height: 80px;
+            width: 80px;
+        }
+    }
+
+    &.showing-filter {
+        display: flex;
+        background-color: rgba(0, 0, 0, 0.4);
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
     }
 }

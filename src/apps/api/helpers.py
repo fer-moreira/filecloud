@@ -5,7 +5,6 @@ from django.db.models.fields import FloatField
 from src.apps.api.models import FilePathModel
 from src.filecloud.encryption import EncryptionManager
 import random
-import pprint
 
 def validated_register (POST_DATA):
     if "firstname"       in POST_DATA \
@@ -53,9 +52,6 @@ def already_exists (POST_DATA):
 def save_file_to_db (payload):
     file = payload.get("file")
     path = payload.get("path")
-
-    print(file.file)
-    pprint.pprint(file.__dir__())
 
     file_in_db = FilePathModel()
     file_in_db.name = file.name

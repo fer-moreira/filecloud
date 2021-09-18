@@ -13,7 +13,7 @@
     <div class="content-container">
         {% include "components/header.html" %}
 
-        <div class="storage-container">
+        <div id="drop_zone" class="storage-container dropzone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);"ondragleave="dragLeaveHandler(event);">
             <div class="storage-field field-head">
                 <div class="field-container"><span class="field-container--text">Name</span></div>
                 <div class="field-container"><span class="field-container--text">Size</span></div>
@@ -29,11 +29,16 @@
                 <div class="field-container"><span class="field-container--text">{% sizeof item.filesize %}</span></div>
                 <div class="field-container"><span class="field-container--text">{% hcontentype item.contenttype %}</span></div>
                 <div class="field-container"><span class="field-container--text">{% timeago item.created_at %}</span></div>
-                <div class="field-container"><span class="field-container--text">{{ item.owner }}</span></div>
+                <div class="field-container"><span class="field-container--text">{{ item.owner.first_name }}</span></div>
                 <div class="field-container"><span class="field-container--text">:</span></div>
             </div>
             {% endfor %}
+
+            {% include 'components/uploading_list.html' %}
         </div>
     </div>
 </main>
+
+{% include 'includes/dropzone-filter.html' %}
+
 {% endblock content %}
