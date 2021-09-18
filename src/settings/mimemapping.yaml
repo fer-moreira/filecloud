@@ -1,0 +1,78 @@
+
+app-code.svg:
+    - text-x-python
+    - coding
+    - application/octet-stream
+
+# app-code_2.svg:
+
+# app-code_3.svg:
+
+app-common.svg:
+    - generic
+    - text/plain
+
+app-image.svg:
+    - image/jpg
+    - image/bpm
+    - image/bitmap
+    - image/pdf
+    - application/pdf
+    - image/jpeg
+    - image/png
+    - image/gif
+
+app-video.svg:
+    - video/ogg
+    - video/mp4
+    - video/wav
+    - application/vnd.apple.mpegurl 
+    - application/x-mpegurl 
+    - video/3gpp
+    - video/mp4
+    - video/mpeg
+    - video/ogg
+    - video/quicktime
+    - video/webm
+    - video/x-m4v
+    - video/ms-asf
+    - video/x-ms-wmv
+    - video/x-msvideo
+
+app-json.svg:
+    - text/x-yaml
+    - text/yaml
+    - text/yml
+    - application/json
+    - application/ini
+    - application/x-yaml
+    - application/x-yml
+    - application/yaml
+    - application/yml
+
+app-media.svg:
+    - audio/ogg
+    - application/ogg
+    - audio/mpeg
+    - audio/mp3
+    - audio/wav
+
+app-web.svg:
+    - text/html
+
+app-zip.svg:
+    - application/zip
+    - application/vnd.rar
+    - application/x-7z-compressed
+
+folder-locked.svg:
+    - folder-private
+
+folder-public.svg:
+    - folder
+
+# app-disc.svg:
+
+# app-office.svg:
+
+# app-settings.svg:
