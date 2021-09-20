@@ -1,44 +1,24 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load utils_tag %}
-{% load content_types %}
-
 
 {% block head %}
+    {% if request.user.is_authenticated %}
+        <script src="{% static 'js/helpers/folderCreation.js' %}"></script>
+        <script src="{% static 'js/dropfile.js' %}"></script>
+        <script src="{% static 'js/dropmenuHandler.js' %}"></script>
+        <script src="{% static 'js/helpers/filePopupEditor.js' %}"></script>
+    {% endif %}
 {% endblock head %}
 
 {% block content %}
-<main class="main-block">
+<main id="main-block" class="main-block" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);" ondragleave="dragLeaveHandler(event);">
     {% include "components/aside.html" %}
     <div class="content-container">
         {% include "components/header.html" %}
-
-        <div id="drop_zone" class="storage-container dropzone" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);"ondragleave="dragLeaveHandler(event);">
-            <div class="storage-field field-head">
-                <div class="field-container"><span class="field-container--text">Name</span></div>
-                <div class="field-container"><span class="field-container--text">Size</span></div>
-                <div class="field-container"><span class="field-container--text">Type</span></div>
-                <div class="field-container"><span class="field-container--text">Added</span></div>
-                <div class="field-container"><span class="field-container--text">Owner</span></div>
-                <div class="field-container"><span class="field-container--text"></span></div>
-            </div>
-
-            {% for item in items %}
-            <div class="storage-field field-file">
-                <div class="field-container">{% get_icon item.contenttype %}<span class="field-container--text">{{ item.name }}</span></div>
-                <div class="field-container"><span class="field-container--text">{% sizeof item.filesize %}</span></div>
-                <div class="field-container"><span class="field-container--text">{% hcontentype item.contenttype %}</span></div>
-                <div class="field-container"><span class="field-container--text">{% timeago item.created_at %}</span></div>
-                <div class="field-container"><span class="field-container--text">{{ item.owner.first_name }}</span></div>
-                <div class="field-container"><span class="field-container--text">:</span></div>
-            </div>
-            {% endfor %}
-
-            {% include 'components/uploading_list.html' %}
-        </div>
+        {% include "components/storage.html" %}
     </div>
 </main>
-
-{% include 'includes/dropzone-filter.html' %}
+{% include 'components/upload_overlay.html' %}
+{% include 'components/file_popup.html' %}
 
 {% endblock content %}

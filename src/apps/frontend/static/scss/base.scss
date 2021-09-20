@@ -1,12 +1,15 @@
-@import "./_includes/_colors.scss";
 @import "./_includes/_reset.scss";
+@import "./_includes/_filters.scss";
 
-
+body {
+    background-color: $dark;
+    // background-image: linear-gradient($deepgrey, $dark);
+}
 
 .main {
     min-height: 100vh;
     width: 100%;
-    background-color: $dark;
+    overflow-x: hidden;
 }
 
 a {
@@ -19,7 +22,9 @@ a {
 @import "./_components/aside.scss";
 @import "./_components/header.scss";
 @import "./_components/storage.scss";
+@import "./_components/drop_overlay.scss";
 @import "./_components/uploading_list.scss";
+@import "./_components/file_popup.scss";
 
 @import "./pages/home.scss";
 @import "./pages/login_signin.scss";

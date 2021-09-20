@@ -1,4 +1,6 @@
+from os import name
 from django import template
+from django.db.models.fields.related import ForeignObject
 from django.template.defaultfilters import slugify
 from django.urls import reverse
 from django.conf import settings
@@ -45,5 +47,16 @@ def hreadable_ctype (value):
     try:
         return value.split("/")[-1]
     except Exception as r:
-        print(r)
         return value
+
+
+@register.simple_tag(name="truncate")
+def truncate (value):
+    if (len(value) <= 70):
+        return value
+    else:
+        fn = value[:70]
+        fn = str(fn).rstrip() + "[...]"
+        return fn
+
+

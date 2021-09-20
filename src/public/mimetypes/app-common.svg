@@ -1,19 +1,17 @@
-<svg width="64" height="64" version="1.1" xmlns="http://www.w3.org/2000/svg">
- <defs>
-  <filter id="a" x="-.039001" y="-.033428" width="1.078" height="1.0669" color-interpolation-filters="sRGB">
-   <feGaussianBlur stdDeviation="0.20637525"/>
-  </filter>
- </defs>
- <path transform="scale(3.7796)" d="m3.4395 1.3543c-0.73289 0-1.3229 0.59001-1.3229 1.3229v12.171c0 0.73289 0.59001 1.3229 1.3229 1.3229h10.054c0.73289 0 1.3229-0.59001 1.3229-1.3229v-10.319l-3.175-3.175z" fill-rule="evenodd" filter="url(#a)" opacity=".15" stroke-width=".26458" style="paint-order:stroke fill markers"/>
- <g transform="scale(3.7796)" fill-rule="evenodd">
-  <path transform="scale(.26458)" d="m13 4c-2.77 0-5 2.23-5 5v46c0 2.77 2.23 5 5 5h38c2.77 0 5-2.23 5-5v-39l-12-12z" fill="#f4f4f4" style="paint-order:stroke fill markers"/>
-  <path d="m14.816 4.2332-3.1749-3.1749v1.852c0 0.73288 0.59001 1.3229 1.3229 1.3229z" fill="#bbb" style="paint-order:stroke fill markers"/>
- </g>
- <g transform="translate(0,6)" fill="#ccc">
-  <rect x="18" y="20" width="28" height="3" rx="0" ry="0" style="paint-order:markers stroke fill"/>
-  <rect x="18" y="27" width="28" height="3" rx="0" ry="0" style="paint-order:markers stroke fill"/>
-  <rect x="18" y="34" width="28" height="3" rx="0" ry="0" style="paint-order:markers stroke fill"/>
-  <rect x="18" y="41" width="28" height="3" rx="0" ry="0" style="paint-order:markers stroke fill"/>
- </g>
- <path d="m43.998 11v0.58398c0 3.0009 2.23 5.416 5 5.416h7l5.37e-4 -1.0002-7.0005 1.89e-4c-2.77 7.5e-5 -5-2.23-5-5z" fill-rule="evenodd" opacity=".1" stroke-width="3.934" style="paint-order:stroke fill markers"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>text-plain</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="text-plain">
+            <g id="Group-2" transform="translate(3.000000, 1.000000)">
+                <image id="Bitmap" x="0" y="0" width="18" height="22" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAWCAYAAADNX8xBAAAABGdBTUEAA1teXP8meAAAAHtJREFUOBHtlEsOwCAIRLG/dNP7n1bbGRMXYqOoW0lmwccnQYMTEQft0AZZzKMoQK8uPhC4dbDiP8idEBvI7Mo8m/MLGwHxugI2CipgM6AE42PJLCgyrE/O4qotUHU8MblmtGbUnkC7gv+I+7dn1Woqzwbu3d7lr0FsxH86jAe4hpwiTgAAAABJRU5ErkJggg=="></image>
+                <path d="M16,21 L2,21 C2,21 1,21 1,20 L1,2 C1,1 2,1 2,1 L12.004995,1 L17,6 L17,20 C17,21 16,21 16,21 Z" id="path14361" fill="#E2E5F3"></path>
+                <path d="M13,6 C13,6 12,6 12,5 L12,1 L17,6 L13,6 Z" id="path14363" fill="#FBFBFB"></path>
+            </g>
+            <path d="M18,9 L18,10 L6,10 L6,9 L18,9 Z M18,12 L18,13 L6,13 L6,12 L18,12 Z M18,15 L18,16 L6,16 L6,15 L18,15 Z M18,18 L18,19 L6,19 L6,18 L18,18 Z" id="Combined-Shape" fill="#ADA3C2"></path>
+        </g>
+    </g>
 </svg>

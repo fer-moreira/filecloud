@@ -6,12 +6,21 @@
         </div>
         <div class="nav-breadcrumb">
             <span class="nav-breadcrumb--text">Cloud</span>
+            {% for bd in breadcrumb %}
             <span class="nav-breadcrumb--text current">/</span>
-            <span class="nav-breadcrumb--text current">Dados Diferenciados</span>
+            <span class="nav-breadcrumb--text current">{{ bd }}</span>
+            {% endfor %}
         </div>
     </div>
     <div class="navheader__profile">
-        <button class="function-btn">
+        <div id="folder-creator-input" class="navheader__profile--inputbox">
+            <input id="folder-name-field" class="box-input" placeholder="Folder Name" maxlength="20">
+            <button class="box-button" id="make-folder-btn">
+                {% include "svgs/header/checkmark_create.svg" %}
+            </button>
+        </div>
+
+        <button class="function-btn" id="add-folder-btn">
             {% include "svgs/header/add_folder.svg" %}
         </button>
         

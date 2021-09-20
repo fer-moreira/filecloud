@@ -1,0 +1,44 @@
+.dropzone-filter {
+    width:      100%;
+    height:     100%; 
+    z-index:    10;
+    top:        0; 
+    left:       0; 
+    position:   fixed; 
+    
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    pointer-events: none;
+    
+    * {
+        pointer-events: none;
+    }
+    
+    &.showing-filter {
+        display: flex;
+        background: rgba(0, 0, 0, 0.5); 
+    }
+
+    &__area {
+        height: 150px;
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: dashed 4px $white;
+        padding: 10px 20px;
+
+        .area-image {
+            height: 70px;
+            width: 70px;
+        }
+
+        .area-text {
+            font-weight: bolder;
+            color: $white;
+        }
+    }
+}

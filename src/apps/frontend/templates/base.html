@@ -11,11 +11,8 @@
     <link rel="shortcut icon" href="{% static 'public/favicon.ico' %}" />
 
     <script src="{% static 'js/tools/jquery-3.6.0.min.js' %}"></script>
-    <script src="{% static 'js/dropmenuHandler.js' %}"></script>
+    <script src="{% static 'js/utils.js' %}"></script>
     
-    {% if request.user.is_authenticated %}
-    <script src="{% static 'js/dropfile.js' %}"></script>
-    {% endif %}
     {% block head %}
     {% endblock head %}
 
@@ -23,12 +20,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
 
-    <link href="{% sass_src 'scss/base.scss' %}" rel="stylesheet" type="text/css" />
+    <link href="{% sass_src 'scss/base_dark.scss' %}" rel="stylesheet" type="text/css" />
 
     <title>Filecloud - Home</title>
 </head>
 <body>
-    <div class="main">
+    <div id="main" class="main">
         {% block content %}
         {% endblock content %}
     </div>

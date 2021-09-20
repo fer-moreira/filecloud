@@ -1,13 +1,12 @@
 .main-block {
-    min-height: 87%;
+    min-height: 100vh;
     width: 100%;
-    background-color: $dark;
 
     display: grid;
     grid-template-columns: 300px auto;
 
 
     .content-container {
-        
+        position: relative;
     }
 }

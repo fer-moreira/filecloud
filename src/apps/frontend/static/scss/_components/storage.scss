@@ -1,94 +1,84 @@
-.storage-container {
-    min-height: calc(100vh - 120px);
+.storage-table {
     width: 100%;
 
-    .storage-field {
-        height: 80px;
-        display: grid;
-        grid-template-columns:calc(100% - 500px) 100px 50px 90px 70px 40px;
-        justify-content: space-between;
-        align-items: center;
-
-        border-style: solid;
-        border-color: $invisible_border;
-        border-width: 0 0 3px 0;
-
-        &.field-head {
+    &__field {
+        &.header {
             height: 50px;
-            .field-container {
-                
-                &--text {
-                    font-weight: bolder;
-                }
-            }
-        }
-        &.field-file {
-            .field-container {
-                overflow: hidden;
-                
-                &--text {
-                    word-wrap: anywhere;
-                    font-weight: normal;
-                    text-align: center;
-                }
+
+            .tfield {
+                padding-bottom: 5px;
+                color: $grey;
+                border-style: solid;
+                border-width: 0px 0px 4px 0px;
+                border-color: $invisible_border;
             }
         }
 
-        .field-container {
-            min-width: 40px;
-            height: 100%;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
+        &.file {
+            height: 45px;
+            border-style: solid;
+            border-bottom-width: 0px 0px 4px 0px;
+            border-color: $invisible_border;
 
-            svg {
-                height: 32px;
-                width: 32px;
-                margin-right: 10px;
+            .tfield:first-child {
+                display: flex;
+                align-items: center;
+                height: 45px;
+            }
+
+            &:hover {
+                .tfield {
+                    background-color: $puredark;
+                }
+            }
+
+            &:active {
+                .tfield.clickable {
+                    filter: invert(1);
+                }
+            }
+
+        }
+
+        
+        .tfield {
+            text-align: center;
+            color: $white;
+
+            &.clickable {
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $space;
+                }
             }
 
             &:first-child {
-                padding-left: 30px;
+                text-align: left;
+                padding-left: 20px;
             }
 
-            &--text {
+            &:last-child {
+                // padding-right: 20px;
+            }
+
+            svg {
+                height: 24px;
+                width: 24px;
+                margin-right: 10px;
+            }
+
+            &--link {
+                text-align: center;
                 color: $white;
+                text-decoration: none;
+                font-weight: normal;
+                font-size: 15px;
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
-    }
-}
-
-.dropzone-filter {
-    background-color: rgba(0, 0, 0, 0);
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
-    display: none;
-
-    * {
-        pointer-events: none;
-    }
-
-    &__area {
-        background-color: transparent;
-        padding: 30px 70px;
-        border-style: dashed;
-        border-width: 4px;
-        border-color: $white;
-
-        .area-image {
-            height: 80px;
-            width: 80px;
-        }
-    }
-
-    &.showing-filter {
-        display: flex;
-        background-color: rgba(0, 0, 0, 0.4);
-        height: 100vh;
-        width: 100%;
-        top: 0;
-        left: 0;
-        position: absolute;
     }
 }

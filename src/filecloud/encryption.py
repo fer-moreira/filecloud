@@ -12,7 +12,6 @@ class EncryptionManager (object):
         self.key = str(settings.ENCRYPT_PATH_PASSPHRASE).encode("utf-8")
 
     def encrypt(self, value, encode=True):
-        
         source = str.encode(value)
         key = SHA256.new(self.key).digest()
         
@@ -38,4 +37,4 @@ class EncryptionManager (object):
         if data[-padding:] != bytes([padding]) * padding:  
             raise ValueError("Invalid padding...")
 
-        return data[:-padding]  
+        return data[:-padding].decode("utf-8")

@@ -70,11 +70,11 @@ th {
 .main {
   min-height: 100vh;
   width: 100%;
-  background-color: #0E0E11; }
+  background-color: #dfdfdf; }
 
 a {
   font-weight: bolder;
-  color: #0E0E11;
+  color: #dfdfdf;
   font-size: 13px;
   text-decoration: underline; }
 
@@ -83,7 +83,7 @@ a {
   grid-template-rows: 250px auto;
   border-style: solid;
   border-width: 0px 2px 0px 0px;
-  border-color: #1d1d22; }
+  border-color: #bbbbbb; }
   .navigation__shortcut {
     display: flex;
     flex-direction: column;
@@ -102,7 +102,7 @@ a {
         margin-left: 15px;
         font-size: 25px;
         font-weight: bold;
-        color: #F3F3F3; }
+        color: #000000; }
     .navigation__shortcut .upload-shortcut {
       width: 100%;
       display: flex;
@@ -118,16 +118,16 @@ a {
         height: 60px;
         font-weight: bold;
         font-size: 15px;
-        background-color: #F3F3F3;
-        color: #0E0E11;
+        background-color: #000000;
+        color: #dfdfdf;
         transition: 200ms background-color, 200ms color; }
         .navigation__shortcut .upload-shortcut--submit:hover {
-          background-color: #BBBBBB;
+          background-color: #18181D;
           border: 2px solid #A6A6A6; }
         .navigation__shortcut .upload-shortcut--submit:active {
-          background-color: #0E0E11;
-          color: #F3F3F3;
-          border: 2px solid #F3F3F3; }
+          background-color: #dfdfdf;
+          color: #000000;
+          border: 2px solid #000000; }
   .navigation__locations {
     display: flex;
     flex-direction: column;
@@ -138,10 +138,10 @@ a {
       justify-content: flex-start;
       align-items: center;
       padding: 0px 0px 0px 60px;
-      background-color: #0E0E11;
+      background-color: #dfdfdf;
       border-style: solid;
       border-width: 0px 0px 0px 0px;
-      border-color: #F3F3F3;
+      border-color: #000000;
       transition: 50ms border, 50ms background, 50ms color; }
       .navigation__locations .location svg {
         height: 24px;
@@ -149,30 +149,30 @@ a {
       .navigation__locations .location__name {
         font-weight: normal;
         font-size: 17px;
-        color: #BBBBBB;
+        color: #18181D;
         margin-left: 20px; }
       .navigation__locations .location:hover {
         padding: 0px 0px 0px 55px;
         border-style: solid;
         border-width: 0px 0px 0px 5px;
-        border-color: #F3F3F3;
-        background-color: #18181D; }
+        border-color: #000000;
+        background-color: #BBBBBB; }
         .navigation__locations .location:hover__name {
-          color: #F3F3F3; }
+          color: #000000; }
       .navigation__locations .location.in-location {
         padding: 0px 0px 0px 55px;
         border-style: solid;
         border-width: 0px 0px 0px 5px;
-        border-color: #F3F3F3;
-        background-color: #18181D; }
+        border-color: #000000;
+        background-color: #BBBBBB; }
         .navigation__locations .location.in-location .location__name {
-          color: #F3F3F3; }
+          color: #000000; }
 
 .navheader {
   height: 120px;
   border-style: solid;
   border-width: 0px 0px 2px 0px;
-  border-color: #1d1d22;
+  border-color: #bbbbbb;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -183,17 +183,17 @@ a {
     gap: 10px;
     padding: 0px 0px 0px 30px; }
     .navheader__breadcrumb .nav-greetings--text {
-      color: #BBBBBB;
+      color: #18181D;
       font-size: 28px;
       font-weight: lighter; }
       .navheader__breadcrumb .nav-greetings--text b {
-        color: #F3F3F3;
+        color: #000000;
         font-weight: bold; }
     .navheader__breadcrumb .nav-breadcrumb {
       display: flex;
       flex-direction: row; }
       .navheader__breadcrumb .nav-breadcrumb--text {
-        color: #F3F3F3;
+        color: #000000;
         font-size: 16px;
         margin-right: 8px; }
         .navheader__breadcrumb .nav-breadcrumb--text.current {
@@ -230,7 +230,7 @@ a {
     position: relative;
     height: fit-content;
     width: 150px;
-    background-color: #F3F3F3;
+    background-color: #000000;
     border-radius: 2px;
     position: absolute;
     transform: translate(-100px, 20px);
@@ -246,11 +246,11 @@ a {
       align-items: center;
       gap: 10px; }
       .profile-container .profile-dropmenu .menu--btn {
-        color: #18181D;
+        color: #BBBBBB;
         text-decoration: none;
         font-weight: bolder; }
         .profile-container .profile-dropmenu .menu--btn:hover {
-          color: #0E0E11;
+          color: #dfdfdf;
           text-decoration: underline; }
         .profile-container .profile-dropmenu .menu--btn.danger {
           color: #b32b2b;
@@ -260,14 +260,14 @@ a {
             text-decoration: underline; }
       .profile-container .profile-dropmenu .menu--separator {
         width: 80%;
-        background-color: #BBBBBB;
+        background-color: #18181D;
         height: 2px;
         border-radius: 10em; }
       .profile-container .profile-dropmenu .menu--arrow {
         position: absolute;
         height: 15px;
         width: 15px;
-        background-color: #F3F3F3;
+        background-color: #000000;
         top: -7.5px;
         right: 15px;
         transform: rotate(45deg); }
@@ -278,15 +278,15 @@ a {
     height: 50px; }
     .storage-table__field.header .tfield {
       padding-bottom: 5px;
-      color: #BBBBBB;
+      color: #18181D;
       border-style: solid;
       border-width: 0px 0px 4px 0px;
-      border-color: #1d1d22; }
+      border-color: #bbbbbb; }
   .storage-table__field.file {
     height: 40px; }
   .storage-table__field .tfield {
     text-align: center;
-    color: #F3F3F3; }
+    color: #000000; }
     .storage-table__field .tfield:first-child {
       text-align: left;
       padding-left: 20px; }
@@ -320,28 +320,28 @@ a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: dashed 4px #F3F3F3;
+    border: dashed 4px #000000;
     padding: 10px 20px; }
     .dropzone-filter__area .area-image {
       height: 70px;
       width: 70px; }
     .dropzone-filter__area .area-text {
       font-weight: bolder;
-      color: #F3F3F3; }
+      color: #000000; }
 
 .uploading-list {
   display: none;
   position: sticky;
   min-height: 100px;
   width: 350px;
-  background: #0E0E11;
+  background: #dfdfdf;
   bottom: 30px;
   margin-left: 30px;
   border-style: solid;
   border-width: 4px;
-  border-color: #18181D;
+  border-color: #BBBBBB;
   border-radius: 10px;
-  filter: drop-shadow(1px 1px 8px #18181D);
+  filter: drop-shadow(1px 1px 8px #BBBBBB);
   padding: 10px; }
   .uploading-list.showing {
     display: block; }
@@ -362,7 +362,7 @@ a {
         width: 100%;
         gap: 10px; }
         .uploading-list .upload-item__detail .item-detail--text {
-          color: #F3F3F3; }
+          color: #000000; }
           .uploading-list .upload-item__detail .item-detail--text img {
             transform: rotate(0deg); }
           .uploading-list .upload-item__detail .item-detail--text .rotating {
@@ -376,9 +376,9 @@ a {
           font-weight: bolder;
           background-color: transparent;
           border: none;
-          color: #F3F3F3; }
+          color: #000000; }
     .uploading-list .upload-item__progress-bar {
-      background-color: #000000;
+      background-color: #F3F3F3;
       height: 3px;
       width: 100%; }
       .uploading-list .upload-item__progress-bar .progress-bar {
@@ -395,7 +395,7 @@ a {
 .main-block {
   min-height: 100vh;
   width: 100%;
-  background-color: #0E0E11;
+  background-color: #dfdfdf;
   display: grid;
   grid-template-columns: 300px auto; }
   .main-block .content-container {
@@ -404,14 +404,14 @@ a {
 .sign-block {
   width: 100%;
   height: 100%;
-  background-color: #0E0E11;
+  background-color: #dfdfdf;
   display: flex;
   justify-content: center;
   align-items: center; }
   .sign-block .sign-form {
     width: 350px;
     height: fit-content;
-    background-color: #F3F3F3;
+    background-color: #000000;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -441,8 +441,8 @@ a {
     .sign-block .sign-form .sign-field {
       height: 40px;
       width: 100%;
-      background-color: #BBBBBB;
-      color: #0E0E11;
+      background-color: #18181D;
+      color: #dfdfdf;
       border: none;
       border-radius: 10px;
       padding: 0px 16px 0px 16px;
@@ -458,22 +458,22 @@ a {
         outline-style: solid;
         outline-color: #e74545; }
       .sign-block .sign-form .sign-field:hover {
-        background-color: #BBBBBB;
-        color: #0E0E11; }
+        background-color: #18181D;
+        color: #dfdfdf; }
         .sign-block .sign-form .sign-field:hover::placeholder {
-          color: #0E0E11; }
+          color: #dfdfdf; }
       .sign-block .sign-form .sign-field:focus {
-        background-color: #BBBBBB;
-        color: #0E0E11; }
+        background-color: #18181D;
+        color: #dfdfdf; }
         .sign-block .sign-form .sign-field:focus::placeholder {
-          color: #BBBBBB; }
+          color: #18181D; }
       .sign-block .sign-form .sign-field:not(:placeholder-shown) {
-        background-color: #BBBBBB;
-        color: #0E0E11; }
+        background-color: #18181D;
+        color: #dfdfdf; }
         .sign-block .sign-form .sign-field:not(:placeholder-shown)::placeholder {
-          color: #0E0E11; }
+          color: #dfdfdf; }
       .sign-block .sign-form .sign-field::placeholder {
-        color: #0E0E11;
+        color: #dfdfdf;
         font-weight: 500; }
     .sign-block .sign-form .sign-pseudo-link {
       width: 100%;
@@ -484,7 +484,7 @@ a {
         justify-content: center;
         align-items: center; }
       .sign-block .sign-form .sign-pseudo-link .sign-gotolink {
-        color: #0E0E11;
+        color: #dfdfdf;
         font-size: 13px;
         font-weight: lighter;
         text-decoration: underline; }
@@ -519,7 +519,7 @@ a {
           left: 0;
           height: 20px;
           width: 20px;
-          background-color: #BBBBBB;
+          background-color: #18181D;
           border-radius: 5px;
           border-style: solid;
           border-width: 3px;
@@ -529,8 +529,8 @@ a {
       .sign-block .sign-form .sign-final .sign-submit .submit-button {
         width: 120px;
         height: 50px;
-        background-color: #18181D;
-        color: #F3F3F3;
+        background-color: #BBBBBB;
+        color: #000000;
         font-weight: bold;
         font-size: 15px;
         border-radius: 10px;
@@ -542,11 +542,11 @@ a {
           width: 100%;
           margin-top: 20px; }
         .sign-block .sign-form .sign-final .sign-submit .submit-button:hover {
-          background-color: #0E0E11; }
+          background-color: #dfdfdf; }
         .sign-block .sign-form .sign-final .sign-submit .submit-button:disabled {
-          background-color: #F3F3F3;
+          background-color: #000000;
           color: #A6A6A6;
-          border: 2px solid #BBBBBB; }
+          border: 2px solid #18181D; }
       .sign-block .sign-form .sign-final.flex-column {
         flex-direction: column;
         justify-content: unset;
@@ -580,7 +580,7 @@ a {
       .sign-block .sign-form .sign-error .error-text {
         font-weight: bolder;
         font-size: 15px;
-        color: #F3F3F3; }
+        color: #000000; }
 
 .sign-checkbox:hover .sign-checkbox-input ~ .sign-checkmark {
   background-color: #A6A6A6 !important; }
@@ -610,4 +610,4 @@ a {
   100% {
     opacity: 1.0; } }
 
-/*# sourceMappingURL=base.css.map */
+/*# sourceMappingURL=base_white.css.map */

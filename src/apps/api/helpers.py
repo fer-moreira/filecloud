@@ -1,10 +1,10 @@
 from base64 import encode
 from typing import ForwardRef
 from django.contrib.auth.models import User
-from django.db.models.fields import FloatField
 from src.apps.api.models import FilePathModel
 from src.filecloud.encryption import EncryptionManager
-import random
+import os, sys, random
+from pathlib import Path
 
 def validated_register (POST_DATA):
     if "firstname"       in POST_DATA \
@@ -46,9 +46,6 @@ def already_exists (POST_DATA):
     except Exception as r:
         raise
 
-
-
-
 def save_file_to_db (payload):
     file = payload.get("file")
     path = payload.get("path")
@@ -57,11 +54,30 @@ def save_file_to_db (payload):
     file_in_db.name = file.name
     file_in_db.file = path
     file_in_db.contenttype = file.content_type if file.content_type != "" else "unknown"
-    file_in_db.filesize = file.size
     file_in_db.owner = payload.get("request").user
 
     strpath = path.__str__()
     encoded_path = EncryptionManager().encrypt(strpath)
     file_in_db.path_encoded = encoded_path
 
+    file_in_db.save()
+
+def create_folder_in_db (payload):
+    fname   = payload.get("name")
+    ftarget = payload.get("path")
+
+    ftarget_pl = (Path(ftarget) / fname)
+    path_encoded = EncryptionManager().encrypt(ftarget_pl.__str__())
+
+    if not os.path.exists(ftarget_pl):
+        os.makedirs(ftarget_pl)
+    else:
+        raise OSError
+    
+    file_in_db = FilePathModel()
+    file_in_db.name = fname
+    file_in_db.file = ftarget_pl
+    file_in_db.contenttype = "folder"
+    file_in_db.owner = payload.get("request").user
+    file_in_db.path_encoded = path_encoded
     file_in_db.save()

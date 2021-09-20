@@ -1,14 +1,15 @@
 var ItemsUploading = {};
 
-
 function dragOverHandler(ev) {
-    document.querySelector("#dropzone-indicator").className = "dropzone-filter showing-filter";
+    $("#dropzone-indicator").attr("class", "dropzone-filter showing-filter");
+    $("#main-block").attr("class", "main-block blurred");
     ev.preventDefault();
 }
 
 function dropHandler(ev) {
     ev.preventDefault();
 
+    $("#main-block").attr("class", "main-block");
     $("#uploadingList").attr("class","uploading-list showing");
 
     try {
@@ -17,8 +18,6 @@ function dropHandler(ev) {
 
         if (ev.dataTransfer.files) {
             for (var i = 0; i < ev.dataTransfer.items.length; i++) {
-                console.log(i);
-
                 if (datatTransferFiles[i].kind === 'file') {
                     var file = datatTransferFiles[i].getAsFile();
                     FileUploader(file, i);
@@ -40,7 +39,8 @@ function dropHandler(ev) {
 }
 
 function dragLeaveHandler(ev) {
-    document.querySelector("#dropzone-indicator").className = "dropzone-filter";
+    $("#dropzone-indicator").attr("class", "dropzone-filter");
+    $("#main-block").attr("class", "main-block");
 }
 
 
@@ -66,12 +66,15 @@ function FileUploader (file, index) {
     `           <div class="progress-bar file_${index}_${randHash}" id="progress-bar"></div>`+
     '        </div>'+
     '    </div>';
-	
+    
     $("#uploadingList").append(fileListBlock);
 
     setTimeout(() => {
         var formData = new FormData();
         formData.append("file", file, file.name);
+
+        folder_target = getUrlParameter("target");
+        formData.append("target",folder_target === false ? "public" : folder_target)
 
         uploadFormData(formData, index, randHash);
     }, 10);
@@ -138,23 +141,3 @@ function uploadFormData (fd, fileindex, randHash) {
     });
     
 }
-
-function getRandomHash () {
-    return (Math.random() + 1).toString(36).substring(4);
-}
-
-function getCookie(c_name)
-{
-    if (document.cookie.length > 0)
-    {
-        c_start = document.cookie.indexOf(c_name + "=");
-        if (c_start != -1)
-        {
-            c_start = c_start + c_name.length + 1;
-            c_end = document.cookie.indexOf(";", c_start);
-            if (c_end == -1) c_end = document.cookie.length;
-            return unescape(document.cookie.substring(c_start,c_end));
-        }
-    }
-    return "";
- }

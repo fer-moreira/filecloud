@@ -83,6 +83,51 @@
                 }
             }
         }
+
+        &--inputbox {
+            background: #09090b;
+            height: 40px;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: row;
+            overflow: hidden;
+            width: 0px;
+
+            transition: 100ms width;
+
+            &.showing {
+                width: 185px;
+            }
+
+            .box-input {
+                height: 100%;
+                width: 150px;
+                background: transparent;
+                color: white;
+                border: none;
+                padding-left: 15px;
+                outline: none;
+            }
+            .box-button {
+                background: transparent;
+                border: none;
+                outline: none;
+                color: white;
+                font-weight: bolder;
+                cursor: pointer;
+                overflow: hidden;
+                padding: 0px 10px;
+
+                &:hover {
+                    background-color: $space;
+                }
+
+                svg {
+                    height: 15px;
+                    width: 15px;
+                }
+            }
+        }
     }
 }
 

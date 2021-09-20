@@ -2,9 +2,9 @@
 app-code.svg:
     - text-x-python
     - coding
-    - application/octet-stream
 
-# app-code_2.svg:
+app-code_2.svg:
+    - application/octet-stream
 
 # app-code_3.svg:
 
@@ -65,11 +65,22 @@ app-zip.svg:
     - application/vnd.rar
     - application/x-7z-compressed
 
+app-exe.svg:
+    - application/x-msdownload
+
+model.svg:
+    - application/x-blender
+    - application/vnd.ms-pkistl
+
+cert.svg:
+    - application/certificate
+
 folder-locked.svg:
     - folder-private
-
-folder-public.svg:
     - folder
+
+# folder-public.svg:
+#     - folder
 
 # app-disc.svg:
 
