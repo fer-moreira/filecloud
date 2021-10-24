@@ -332,8 +332,6 @@ a {
       height: 45px; }
     .storage-table__field.file:hover .tfield {
       background-color: #0a0a0c; }
-    .storage-table__field.file:active .tfield.clickable {
-      filter: invert(1); }
   .storage-table__field .tfield {
     text-align: center;
     color: #F3F3F3; }
@@ -341,6 +339,8 @@ a {
       cursor: pointer; }
       .storage-table__field .tfield.clickable:hover {
         background-color: #000000; }
+      .storage-table__field .tfield.clickable:active {
+        filter: invert(1); }
     .storage-table__field .tfield:first-child {
       text-align: left;
       padding-left: 20px; }

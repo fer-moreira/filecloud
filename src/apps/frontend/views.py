@@ -39,7 +39,6 @@ class FolderEncryptView (TemplateView):
         files_items = DriveManager().get_files_object(target_path, False)
         return files_items
 
-
 class PublicDriveView (TemplateView):
     template_name = "pages/main.html"
 
@@ -62,7 +61,6 @@ class PublicDriveView (TemplateView):
     def get_files (self):
         files_items = DriveManager().get_files_object(settings.HOME_FILES_PATH, False)
         return files_items
-
 
 class LoginView (TemplateView):
     template_name = "pages/login.html"

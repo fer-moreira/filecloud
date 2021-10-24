@@ -8,7 +8,6 @@
         <th class="tfield">Size</th>
         <th class="tfield">Type</th>
         <th class="tfield">Added</th>
-        {% comment %} <th class="tfield">Updated</th> {% endcomment %}
         <th class="tfield">Owner</th>
         <th class="tfield"></th>
         <th class="tfield"></th>
@@ -18,7 +17,6 @@
         <td class="tfield">{% get_icon item.contenttype %}<a class="tfield--link" href="/{{ item.type_href }}?target={{ item.data_href|urlencode }}" target="{{item.data_loc}}">{% truncate item.name %}</a></td>
         <td class="tfield">{% sizeof item.filesize %}</td>
         <td class="tfield">{{ item.human_type }}</td>
-        {% comment %} <td class="tfield">{% timeago item.created_at %}</td> {% endcomment %}
         <td class="tfield">{% timeago item.updated_at %}</td>
         <td class="tfield">{{ item.owner_name }}</td>
         <td id="edit-file-field"
